@@ -114,7 +114,7 @@ export default function BlockSchedulerDashboard() {
   const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8000/schedule", {
+    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/schedule`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(buildSchedulePayload()),
